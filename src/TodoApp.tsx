@@ -3,11 +3,15 @@ import { useLocation } from 'react-router-dom'
 
 import AppLayout from './components/application/AppLayout'
 import TodoHeader from './components/todo/TodoHeader'
-import TodoPage from './components/todo/TodoBody'
+import TodoPage from './components/todo/TodoPage'
 import AboutPage from './components/about/About'
 import NotFoundPage from './components/notFound/NotFound'
+import todoDataInitHook from './model/todo_data_init_hook'
 
-function TodoApp() {
+const TodoApp: React.FC = () => {
+  // Get dat from store
+  todoDataInitHook()
+
   let body = <NotFoundPage />;
 
   switch (useLocation().pathname) {

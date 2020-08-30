@@ -1,10 +1,12 @@
 import React from 'react'
+import { Card } from '@material-ui/core'
+import TodoContent from './TodoContent'
 
 const TodoBody: React.FC = () => {
     return (
-        <div>
-            <h1>Todo Body</h1>
-        </div>
+        <Card>
+            <TodoContent />
+        </Card>
     )
 }
 
