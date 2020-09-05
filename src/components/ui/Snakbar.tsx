@@ -1,5 +1,5 @@
 import React from 'react'
-import { Snackbar, Dialog } from '@material-ui/core'
+import { Snackbar } from '@material-ui/core'
 
 interface ISnackbar {
     severity: string;

@@ -11,7 +11,7 @@ const todos = [
     },
     {
         id: 3,
-        title: "OK",
+        title: "GAGA PASCOOL",
         completed: false
     },
     {

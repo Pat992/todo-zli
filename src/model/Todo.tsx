@@ -1,9 +1,18 @@
 export type UniqueId = number | string | undefined;
 
-interface Todo {
-    id: UniqueId;
-    title: string;
-    completed: boolean;
+export default interface Todo {
+    id: UniqueId
+    title: string
+    completed: boolean
 }
 
-export default Todo;
+export class TodoImpl implements Todo {
+    id: UniqueId
+    title: string
+    completed: boolean
+
+    constructor(title: string) {
+        this.title = title
+        this.completed = false
+    }
+}
