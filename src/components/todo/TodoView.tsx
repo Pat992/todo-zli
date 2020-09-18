@@ -11,6 +11,7 @@ const TodoView: React.FC<ITodoView> = () => {
 
     const addTodo = useStoreActions(actions => actions.todoModel.addTodo)
     const editTodo = useStoreActions(actions => actions.todoModel.editTodo)
+    // const todos = useStoreState(state => state.todoModel.todos)
 
     return (
         <Card style={{ margin: "5px", padding: "5px" }}>
@@ -21,12 +22,15 @@ const TodoView: React.FC<ITodoView> = () => {
                     submitFunc={todo => { addTodo(todo) }}
                     resetAfterSubmit={true}
                 />
-                <TodoForm
-                    submitTxt="Edit"
-                    todo={selectedTodo !== undefined ? selectedTodo : new TodoImpl("")}
-                    submitFunc={todo => { editTodo(todo) }}
-                    resetAfterSubmit={false}
-                />
+                {selectedTodo ?
+                    <TodoForm
+                        submitTxt="Edit"
+                        todo={selectedTodo}
+                        submitFunc={todo => { editTodo(todo) }}
+                        resetAfterSubmit={false}
+                    />
+                    : null
+                }
             </CardContent>
         </Card>
     )

@@ -17,10 +17,10 @@ const TodoListItem: React.FC<ITodoListItem> = ({ todo }) => {
     // Call an action from store to use some functinality
     const toggleComplete = useStoreActions(actions => actions.todoModel.toggleCompleted)
     const deleteTodo = useStoreActions(actions => actions.todoModel.delete)
-    const selectTodo = useStoreActions(actions => actions.todoModel.setSelectedTodo)
+    const selectTodo = useStoreActions(actions => actions.todoModel._setSelectedTodo)
 
     return (
-        <ListItem>
+        <ListItem button>
             <Snackbar message={snackMessage} severity="success" open={showSnack} close={setShowSnack} />
             <ListItemIcon>
                 <Checkbox

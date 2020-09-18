@@ -9,7 +9,7 @@ import NotFoundPage from './components/notFound/NotFound'
 import todoDataInitHook from './model/todo_data_init_hook'
 
 const TodoApp: React.FC = () => {
-  // Get dat from store
+  // Get data from store
   todoDataInitHook()
 
   let body = <NotFoundPage />;

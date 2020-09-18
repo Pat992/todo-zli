@@ -18,7 +18,7 @@ export default store
 const {
     useStoreActions,
     useStoreDispatch,
-    useStoreState,
+    useStoreState
 } = createTypedHooks<StoreModel>()
 
 export { useStoreActions, useStoreDispatch, useStoreState }

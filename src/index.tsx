@@ -7,14 +7,18 @@ import { BrowserRouter } from 'react-router-dom'
 // else cannot use the data
 import store from './store/StoreModel';
 import { StoreProvider } from 'easy-peasy';
+import theme from './theme/theme'
+import { ThemeProvider } from '@material-ui/core';
 
 ReactDOM.render(
-  <StoreProvider store={store}>
-    <React.StrictMode>
-      <BrowserRouter>
-        <TodoApp />
-      </BrowserRouter>
-    </React.StrictMode>
-  </StoreProvider>,
+  <ThemeProvider theme={theme}>
+    <StoreProvider store={store}>
+      <React.StrictMode>
+        <BrowserRouter>
+          <TodoApp />
+        </BrowserRouter>
+      </React.StrictMode>
+    </StoreProvider>
+  </ThemeProvider>,
   document.getElementById('root')
 );

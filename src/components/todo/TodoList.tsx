@@ -9,14 +9,15 @@ import { useStoreState } from '../../store/StoreModel'
 const TodoList: React.FC = () => {
     // get state of store, therefore get the data
     const todos = useStoreState(state => state.todoModel.todos)
+    console.log(todos)
     return (
         <List>
-            {todos.map((item: Todo) => (
+            {todos ? todos.map((item: Todo) => (
                 <TodoListItem
                     key={item.id}
                     todo={item}
                 />
-            ))}
+            )) : null}
         </List>
     )
 }
